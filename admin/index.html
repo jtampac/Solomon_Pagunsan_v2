@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Admin · Solomon Pagunsan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Spectral:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+
+  <!-- ============================ LOGIN ============================ -->
+  <section class="login" id="login">
+    <div class="login__card">
+      <div class="login__mark">SP</div>
+      <h1>Content Admin</h1>
+      <p>Sign in to edit the Solomon Pagunsan website.</p>
+      <form id="login-form" autocomplete="off">
+        <div class="login__field">
+          <label for="login-email">Email</label>
+          <input type="email" id="login-email" placeholder="you@example.com" autocomplete="username" />
+        </div>
+        <div class="login__field">
+          <label for="login-pass">Password</label>
+          <input type="password" id="login-pass" placeholder="Enter password" autocomplete="current-password" />
+        </div>
+        <div class="login__error" id="login-error"></div>
+        <button type="submit" class="btn btn--solid" id="login-btn" style="width:100%;justify-content:center;">Sign in</button>
+      </form>
+      <div class="login__note" id="login-note">
+        Checking connection…
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= APP ============================= -->
+  <div class="shell" id="app" hidden>
+    <!-- sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar__brand">
+        <span class="sidebar__mark">SP</span>
+        <span class="sidebar__title">Solomon Pagunsan<small>Content Admin</small></span>
+      </div>
+      <nav class="sidebar__nav" id="admin-nav" aria-label="Admin sections"></nav>
+      <div class="sidebar__foot">
+        <a class="sidebar__view" href="../index.html" target="_blank" rel="noopener">↗ View live site</a>
+        <button class="btn btn--ghost btn--sm" id="logout-btn">Sign out</button>
+      </div>
+    </aside>
+
+    <!-- main -->
+    <div class="main">
+      <header class="topbar">
+        <div class="topbar__left">
+          <button class="topbar__menu" id="menu-btn" aria-label="Toggle menu">☰</button>
+          <h2 id="admin-title">Dashboard</h2>
+        </div>
+        <div class="topbar__actions">
+          <span class="savestate" id="savestate">All changes saved</span>
+          <button class="btn btn--ghost btn--sm" id="discard-btn"><span>Discard draft</span></button>
+          <button class="btn btn--solid btn--sm" id="save-btn"><span>Save draft</span></button>
+          <button class="btn btn--gold btn--sm" id="download-btn"><span>Publish (download)</span></button>
+        </div>
+      </header>
+
+      <div class="scrim" id="scrim"></div>
+      <main class="content" id="admin-content"></main>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <!-- content loader (shared with the public site) + admin app -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+  <script src="../assets/js/config.js"></script>
+  <script src="../assets/js/supabase-client.js"></script>
+  <script src="../assets/js/content.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>
