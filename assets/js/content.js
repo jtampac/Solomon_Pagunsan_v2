@@ -616,14 +616,14 @@
       {
         "name": "GoTraktora",
         "logo": "images/sponsors/Icon-Horizontalx400.png",
-        "url": ""
+        "url": "https://gotraktora.com/"
       },
       {
         "name": "MMTT Laptop Services",
         "logo": "images/sponsors/MMTT_Logo.jpg",
         "url": "https://www.facebook.com/p/MMTT-Laptop-Service-Center-Bayawan-100063534807228/"
       },
-     {
+      {
         "name": "Skygo Philippines",
         "logo": "images/sponsors/Skygo.png",
         "url": "https://www.facebook.com/skygoph"
