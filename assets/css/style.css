@@ -148,6 +148,37 @@ h1,h2,h3{font-family:var(--display);font-weight:600;line-height:1.04;letter-spac
 .nav__toggle span{width:26px;height:2px;background:var(--off-white);transition:.3s var(--ease);}
 .nav.is-solid .nav__toggle span{background:var(--green-800);}
 
+/* ---------------- QUICK PANEL (Gallery / Contact) --------------- */
+/* triggers look identical to the other links */
+.nav__trigger{cursor:pointer;}
+/* the dropdown panel, anchored under the bar on desktop */
+.nav__panel{
+  position:absolute;top:100%;
+  right:max(var(--pad), calc((100% - var(--maxw)) / 2));
+  width:min(320px,90vw);
+  background:var(--off-white);color:var(--charcoal);
+  border:1px solid var(--line, #e2d8c4);border-radius:var(--radius);
+  box-shadow:0 26px 60px -24px rgba(19,38,26,.5);
+  padding:.6rem;margin-top:.5rem;
+  opacity:0;visibility:hidden;transform:translateY(-8px);
+  transition:opacity .25s var(--ease), transform .25s var(--ease), visibility .25s var(--ease);
+}
+.nav__panel.is-open{opacity:1;visibility:visible;transform:translateY(0);}
+.nav__panel-close{
+  position:absolute;top:.5rem;right:.6rem;background:none;border:none;cursor:pointer;
+  font-size:1.3rem;line-height:1;color:var(--earth);padding:.2rem .35rem;border-radius:var(--radius);
+}
+.nav__panel-close:hover{color:var(--green-800);background:rgba(125,154,79,.12);}
+.nav__panel-item{
+  display:block;padding:.85rem .9rem;border-radius:var(--radius);color:var(--green-800)!important;
+  transition:background .2s var(--ease);
+}
+.nav__panel-item + .nav__panel-item{margin-top:.15rem;}
+.nav__panel-item:hover{background:var(--cream);}
+.nav__panel-item .nav__panel-title{display:block;font-family:var(--display);font-weight:600;font-size:1.05rem;}
+.nav__panel-item .nav__panel-blurb{display:block;font-size:.85rem;color:var(--earth);margin-top:.15rem;}
+.nav__panel-item::after{display:none;} /* no underline animation inside panel */
+
 /* ------------------------------ HERO ----------------------------- */
 .hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden;}
 .hero__media{
@@ -506,6 +537,15 @@ h1,h2,h3{font-family:var(--display);font-weight:600;line-height:1.04;letter-spac
   .nav__links a{color:var(--off-white)!important;font-size:1.2rem;}
   .nav__toggle{display:flex;z-index:120;}
   .nav__links .nav__cta{border-color:var(--cane-light);}
+  /* quick panel becomes a full-width slide-down under the header */
+  .nav__panel{
+    position:fixed;top:0;left:0;right:0;width:100%;
+    border-radius:0 0 var(--radius) var(--radius);margin-top:0;
+    padding:4.6rem 1.2rem 1.2rem;max-width:none;
+    transform:translateY(-110%);
+  }
+  .nav__panel.is-open{transform:translateY(0);}
+  .nav__panel-item .nav__panel-title{color:var(--green-800);}
   .stats__inner{grid-template-columns:repeat(2,1fr);gap:1.8rem 1rem;}
   .stat{border-left:none;}
   .timeline__item{grid-template-columns:1fr;gap:.4rem;}
@@ -662,21 +702,11 @@ h1,h2,h3{font-family:var(--display);font-weight:600;line-height:1.04;letter-spac
 body{min-height:100vh;}
 .nav-open{overflow:hidden;}
 
-/* keep first section clear of the fixed header on inner pages
-   (hero pages are full-bleed and handle this themselves) */
-[data-page="about"] #page > .about,
+/* keep the first block clear of the fixed header.
+   Most inner pages open with .page-banner (which carries its own top pad).
+   These two open with a full section instead, so they get the nav offset. */
 [data-page="farm-learning"] #page > .visits,
-[data-page="vlogs"] #page > .videos,
-[data-page="gallery"] #page > .gallery,
-[data-page="partners"] #page > .sponsors,
-[data-page="press"] #page > .media,
-[data-page="contact"] #page > .contact{padding-top:clamp(7rem,14vh,10rem);}
-
-/* the gallery/contact/sponsors heads already carry their own top pad;
-   add a little for the fixed nav on the darker full-width sections */
-[data-page="gallery"] .gallery__head,
-[data-page="contact"] .contact__inner,
-[data-page="partners"] .sponsors__head{padding-top:clamp(7rem,14vh,10rem);}
+[data-page="workshop"] #page > .workshop{padding-top:clamp(7rem,14vh,10rem);}
 
 /* ------------------------- NAV ACTIVE STATE --------------------- */
 .nav__links a.is-active{color:var(--cane-light);}
@@ -790,4 +820,133 @@ body{min-height:100vh;}
   .visits__photo{min-height:200px;}
   .pullquote{padding:1.8rem 1.6rem;}
   .achievements .achievement{padding:1.5rem;}
+}
+
+/* ===================================================================
+   v2 RESTRUCTURE ADDITIONS
+   page banner · section head · about values/philosophy · Captain page ·
+   products · farm-learning extras · gallery filters · vlog categories ·
+   partners supporters · contact form · header consistency
+=================================================================== */
+
+/* shared section head */
+.section-head{max-width:var(--maxw);margin:0 auto;padding:0 var(--pad);margin-bottom:clamp(2rem,5vw,3.2rem);}
+.section-head .section-title{margin-top:.3rem;}
+.section-head .section-sub{max-width:60ch;margin-top:.9rem;}
+
+/* page banner (top of inner pages, sits under the always-solid nav) */
+.page-banner{background:var(--off-white);border-bottom:1px solid rgba(34,30,24,.08);}
+.page-banner__inner{max-width:var(--maxw);margin:0 auto;padding:clamp(8rem,16vh,11rem) var(--pad) clamp(2.4rem,6vh,3.6rem);}
+.page-banner__title{font-family:var(--display);font-weight:600;letter-spacing:-.02em;color:var(--green-900);font-size:clamp(2.6rem,6vw,4.6rem);line-height:1.02;margin-top:.4rem;}
+.page-banner__sub{margin-top:1.1rem;max-width:62ch;color:var(--soil);font-size:clamp(1.05rem,1.7vw,1.25rem);}
+
+/* about: values + philosophy */
+.values{max-width:var(--maxw);margin:0 auto;padding:clamp(3rem,7vh,5rem) var(--pad);}
+.values__head{margin-bottom:2rem;}
+.values__grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.4rem;}
+.value-card{background:var(--cream);border-radius:var(--radius);padding:1.6rem 1.5rem;border-top:3px solid var(--cane);}
+.value-card h3{font-family:var(--display);font-weight:600;color:var(--green-800);font-size:1.18rem;margin-bottom:.5rem;}
+.value-card p{color:var(--soil);font-size:.97rem;}
+.philosophy{background:var(--green-900);color:var(--off-white);}
+.philosophy__inner{max-width:760px;margin:0 auto;padding:clamp(3.5rem,8vh,6rem) var(--pad);text-align:center;}
+.philosophy__inner .section-title{color:var(--off-white);}
+.philosophy__inner p{color:rgba(248,244,236,.85);font-size:clamp(1.05rem,1.8vw,1.3rem);margin-top:1.1rem;}
+
+/* ---- THE CAPTAIN OF NEGROS ---- */
+.cap-hero{position:relative;min-height:72vh;display:flex;align-items:flex-end;overflow:hidden;}
+.cap-hero__media{position:absolute;inset:0;background-size:cover;background-position:center;transform:scale(1.04);}
+.cap-hero__scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(19,38,26,.35) 0%,rgba(19,38,26,.55) 55%,rgba(19,38,26,.9) 100%);}
+.cap-hero__content{position:relative;z-index:2;max-width:var(--maxw);width:100%;margin:0 auto;padding:0 var(--pad) clamp(3.5rem,9vh,6rem);}
+.cap-hero__title{font-family:var(--display);font-weight:600;color:var(--off-white);font-size:clamp(2.8rem,8vw,6rem);letter-spacing:-.02em;line-height:1;margin-top:.6rem;}
+.cap-hero__lead{color:var(--cream);max-width:60ch;margin-top:1.4rem;font-size:clamp(1.1rem,2vw,1.45rem);font-style:italic;}
+.cap-pillars{max-width:var(--maxw);margin:0 auto;padding:clamp(3.5rem,8vh,6rem) var(--pad);}
+.cap-pillars__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem;}
+.pillar{background:var(--off-white);border:1px solid rgba(34,30,24,.08);border-radius:var(--radius);padding:1.9rem 1.7rem;position:relative;}
+.pillar__index{font-family:var(--display);color:var(--cane);font-weight:600;font-size:.95rem;letter-spacing:.1em;}
+.pillar h3{font-family:var(--display);font-weight:600;color:var(--green-800);font-size:1.3rem;margin:.5rem 0 .6rem;}
+.pillar p{color:var(--soil);font-size:1rem;}
+.cap-quote{background:var(--cream);text-align:center;padding:clamp(3rem,7vh,5rem) var(--pad);}
+.cap-quote blockquote{font-family:var(--display);font-style:italic;font-size:clamp(1.5rem,3.4vw,2.4rem);color:var(--green-900);max-width:24ch;margin:0 auto;line-height:1.2;}
+.cap-quote cite{display:block;margin-top:1.2rem;color:var(--earth);font-style:normal;letter-spacing:.05em;}
+
+/* ---- PRODUCTS ---- */
+.products{max-width:var(--maxw);margin:0 auto;padding:clamp(2rem,5vh,3rem) var(--pad) clamp(4rem,9vh,6rem);}
+.products__note{background:var(--cream);border-left:3px solid var(--cane);border-radius:var(--radius);padding:1.1rem 1.4rem;margin-bottom:2rem;color:var(--soil);font-size:1rem;}
+.products__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.6rem;}
+.product{display:flex;flex-direction:column;background:var(--off-white);border:1px solid rgba(34,30,24,.08);border-radius:var(--radius);overflow:hidden;}
+.product__media{position:relative;aspect-ratio:16/10;background-size:cover;background-position:center;}
+.product__tag{position:absolute;top:.8rem;left:.8rem;background:rgba(19,38,26,.82);color:var(--off-white);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;padding:.35rem .7rem;border-radius:var(--radius);}
+.product__body{padding:1.5rem 1.6rem 1.7rem;display:flex;flex-direction:column;gap:.6rem;}
+.product__body h3{font-family:var(--display);font-weight:600;color:var(--green-800);font-size:1.35rem;}
+.product__body p{color:var(--soil);font-size:.98rem;flex:1;}
+.product__inquire{color:var(--cane);font-weight:600;letter-spacing:.03em;align-self:flex-start;}
+.products__disclaim{color:var(--earth);font-size:.9rem;margin-top:1.6rem;font-style:italic;}
+.products__cta{margin-top:2rem;}
+
+/* ---- FARM LEARNING extras ---- */
+.learn-modes{max-width:var(--maxw);margin:clamp(2rem,5vh,3.5rem) auto 0;padding:0 var(--pad);}
+.learn-modes__grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.3rem;}
+.mode-card{background:var(--cream);border-radius:var(--radius);padding:1.5rem 1.4rem;border-top:3px solid var(--green-700);}
+.mode-card h3{font-family:var(--display);font-weight:600;color:var(--green-800);font-size:1.1rem;margin-bottom:.45rem;}
+.mode-card p{color:var(--soil);font-size:.95rem;}
+.learn-gallery{max-width:var(--maxw);margin:clamp(2rem,5vh,3.5rem) auto 0;padding:0 var(--pad);display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;}
+.learn-gallery__item{aspect-ratio:4/3;border-radius:var(--radius);overflow:hidden;cursor:pointer;}
+.learn-gallery__item img{width:100%;height:100%;object-fit:cover;transition:transform .5s var(--ease);}
+.learn-gallery__item:hover img{transform:scale(1.05);}
+
+/* ---- GALLERY filters + caption ---- */
+.gallery__filters{max-width:var(--maxw);margin:0 auto 1.8rem;padding:0 var(--pad);display:flex;flex-wrap:wrap;gap:.6rem;}
+.gallery__filter{background:var(--cream);border:1px solid rgba(34,30,24,.1);color:var(--soil);padding:.5rem 1.1rem;border-radius:999px;cursor:pointer;font-size:.9rem;transition:.25s var(--ease);}
+.gallery__filter:hover{border-color:var(--cane);}
+.gallery__filter.is-active{background:var(--green-800);color:var(--off-white);border-color:var(--green-800);}
+.gallery__cell{display:inline;}
+.gallery__cell.is-hidden{display:none;}
+.gallery__cap{display:block;font-size:.82rem;color:var(--earth);padding:.4rem .2rem 0;}
+
+/* ---- VLOG categories ---- */
+.videos__cat{max-width:var(--maxw);margin:0 auto clamp(2.5rem,6vh,4rem);padding:0 var(--pad);}
+.videos__cat-title{font-family:var(--display);font-weight:600;color:var(--green-800);font-size:1.5rem;margin-bottom:1.2rem;padding-bottom:.6rem;border-bottom:1px solid rgba(34,30,24,.1);}
+
+/* ---- PARTNERS supporters ---- */
+.supporters{max-width:var(--maxw);margin:clamp(2.5rem,6vh,4rem) auto 0;padding:0 var(--pad);}
+.supporters__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.4rem;}
+.supporter{background:var(--cream);border-radius:var(--radius);padding:1.6rem 1.6rem;border-left:3px solid var(--cane);}
+.supporter h3{font-family:var(--display);font-weight:600;color:var(--green-800);font-size:1.2rem;margin-bottom:.4rem;}
+.supporter p{color:var(--soil);font-size:.97rem;}
+
+/* ---- CONTACT page (channels + form) ---- */
+.contact--page{background:var(--green-900);}
+.contact--page .contact__inner{align-items:start;}
+.contact__channels{margin-top:1.4rem;display:flex;flex-direction:column;gap:.6rem;}
+.contact__location{display:flex;align-items:center;gap:1rem;padding:1rem 1.1rem;color:var(--off-white);}
+.contact__location .contact__icon{flex:0 0 auto;}
+.inquiry{background:var(--off-white);border-radius:var(--radius);padding:1.8rem;display:flex;flex-direction:column;gap:1rem;}
+.inquiry__row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+.inquiry label{display:flex;flex-direction:column;gap:.4rem;font-size:.9rem;color:var(--soil);font-weight:500;}
+.inquiry input,.inquiry textarea{font-family:var(--body);font-size:1rem;color:var(--charcoal);background:var(--cream);border:1px solid rgba(34,30,24,.14);border-radius:var(--radius);padding:.7rem .8rem;width:100%;}
+.inquiry input:focus,.inquiry textarea:focus{outline:2px solid var(--cane);outline-offset:1px;border-color:var(--cane);}
+.inquiry textarea{resize:vertical;}
+.inquiry .btn{align-self:flex-start;margin-top:.3rem;}
+.inquiry__note{font-size:.85rem;color:var(--earth);}
+
+/* ---- header consistency: brand/links dark on every inner (solid) page ---- */
+.nav.is-solid .nav__brand,.nav.is-solid .nav__links a{color:var(--green-800);}
+.nav.is-solid .nav__mark{border-color:var(--green-800);}
+
+/* responsive */
+@media (max-width:1024px){
+  .values__grid,.learn-modes__grid{grid-template-columns:repeat(2,1fr);}
+  .cap-pillars__grid{grid-template-columns:repeat(2,1fr);}
+  .learn-gallery{grid-template-columns:repeat(3,1fr);}
+}
+@media (max-width:820px){
+  .products__grid{grid-template-columns:1fr;}
+  .supporters__grid{grid-template-columns:1fr;}
+  .inquiry__row{grid-template-columns:1fr;}
+  .cap-pillars__grid{grid-template-columns:1fr;}
+}
+@media (max-width:560px){
+  .values__grid,.learn-modes__grid{grid-template-columns:1fr;}
+  .learn-gallery{grid-template-columns:repeat(2,1fr);}
+  .page-banner__inner{padding-top:clamp(6.5rem,14vh,9rem);}
 }
