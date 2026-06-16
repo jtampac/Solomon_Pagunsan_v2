@@ -49,12 +49,12 @@
     "lede": "He left the province chasing opportunity in the city. He came home and built it from the soil — one harvest at a time.",
     "image": "images/sugarcane-field.jpg",
     "primaryCta": {
-      "label": "Watch the Vlogs",
-      "href": "vlogs.html"
+      "label": "Explore the Farm",
+      "href": "farm.html"
     },
     "secondaryCta": {
-      "label": "Contact Solomon",
-      "href": "contact.html"
+      "label": "Watch the Vlogs",
+      "href": "vlogs.html"
     }
   },
   "stats": [
@@ -76,7 +76,7 @@
     {
       "num": 10,
       "unit": "years",
-      "label": "Working away from Home before the farm"
+      "label": "Working abroad before the farm"
     }
   ],
   "announcements": [
@@ -95,28 +95,40 @@
   ],
   "homeTeasers": [
     {
-      "title": "The Story",
-      "text": "From the city streets back to the soil — how a Negros farmer built a livelihood from the ground up.",
-      "href": "about.html",
-      "linkLabel": "Read his story"
+      "title": "The Farm",
+      "text": "Sugarcane, cassava, corn, carabao and livestock — a complete working agricultural ecosystem.",
+      "href": "farm.html",
+      "linkLabel": "See the land"
+    },
+    {
+      "title": "The Captain of Negros",
+      "text": "How a self-taught farmer became one of the province's most followed and respected voices in practical agriculture.",
+      "href": "captain.html",
+      "linkLabel": "Read the story"
+    },
+    {
+      "title": "Workshop",
+      "text": "Tools built and modified by hand to solve real problems in the field.",
+      "href": "workshop.html",
+      "linkLabel": "Into the workshop"
     },
     {
       "title": "Farm Learning",
-      "text": "Practical farming methods, hand-built tools, and the student visits that make the farm a classroom.",
+      "text": "A working farm that became a classroom for agriculture students.",
       "href": "farm-learning.html",
-      "linkLabel": "See the farm"
+      "linkLabel": "Learn on the farm"
+    },
+    {
+      "title": "Planting Materials & Tools",
+      "text": "Field-proven cuttings, setts and tools Solomon uses and supplies nationwide.",
+      "href": "products.html",
+      "linkLabel": "View materials"
     },
     {
       "title": "Vlogs",
-      "text": "Planting, harvesting, building, and raising animals — no filters, just the real work.",
+      "text": "Honest documentation of life and work on a Negros farm.",
       "href": "vlogs.html",
-      "linkLabel": "Watch the vlogs"
-    },
-    {
-      "title": "Gallery",
-      "text": "Life on the farm in pictures — the land, the crops, the animals, and the people.",
-      "href": "gallery.html",
-      "linkLabel": "Browse the gallery"
+      "linkLabel": "Watch now"
     }
   ],
   "about": {
@@ -149,11 +161,74 @@
         "text": "Roughly 20 hectares under cultivation — sugarcane, corn, cassava and more — supported by livestock and a growing audience who learn from every harvest he documents."
       }
     ],
+    "values": [
+      {
+        "title": "Work, not shortcuts",
+        "text": "Real results come from showing up in the field every day, season after season."
+      },
+      {
+        "title": "Knowledge is meant to be shared",
+        "text": "What the land has taught him, he passes on freely to anyone willing to learn."
+      },
+      {
+        "title": "Family and land first",
+        "text": "The farm feeds a household and a community before it is ever a business."
+      },
+      {
+        "title": "Solve it with your hands",
+        "text": "When a tool or method doesn't fit the work, he builds or changes it until it does."
+      }
+    ],
+    "philosophyTitle": "Practical knowledge, earned in the field",
+    "philosophy": [
+      "Solomon never attended college. Everything he knows about the land was learned by doing — planting, failing, adjusting, and trying again across decades of seasons.",
+      "That hard-won, hands-on knowledge is exactly what makes his farm a place others now come to study."
+    ],
+    "familyNote": "[Editable placeholder] Add verified details about Solomon's family background and upbringing here.",
     "quote": {
       "text": "I left home chasing an opportunity. I returned home to build it.",
       "attribution": "— Solomon Pagunsan"
+    }
+  },
+  "captain": {
+    "kicker": "The Captain of Negros",
+    "title": "The Captain of Negros",
+    "lead": "Solomon Pagunsan is known across Negros not for a title he asked for, but for one the community gave him — a farmer people listen to, learn from, and look up to.",
+    "image": "images/Solomon_1.jpg",
+    "pillars": [
+      {
+        "title": "A journey of his own",
+        "text": "He left the province to work abroad, then chose to come home and build something lasting from the soil — proof that a future can be grown, not just chased."
+      },
+      {
+        "title": "Influence on local farmers",
+        "text": "Neighbouring growers and young farmers follow his methods, adapt his ideas, and bring him their problems — and he answers, plainly and without holding back."
+      },
+      {
+        "title": "Community impact",
+        "text": "From fiestas to farm visits, he shows up for his community, lending knowledge, tools, planting materials, and encouragement to those starting out."
+      },
+      {
+        "title": "Social media reach",
+        "text": "Through honest farm vlogs and a memorable on-camera presence, his audience has grown far beyond Negros — carrying practical farming to thousands online."
+      },
+      {
+        "title": "Recognition & reputation",
+        "text": "His work has been featured by national outlets and recognised within the agricultural community (see the Press page for features)."
+      },
+      {
+        "title": "Leadership in practical agriculture",
+        "text": "He leads the way most respected by farmers — by example, in the field, with results anyone can walk over and see for themselves."
+      }
+    ],
+    "reach": {
+      "facebookFollowers": "",
+      "youtubeSubscribers": "",
+      "tiktokFollowers": "",
+      "monthlyReach": "",
+      "note": "Audience figures available on request — see Contact."
     },
-    "captain": {
+    "persona": {
       "kicker": "Off the Clock",
       "title": "The Captain of Negros",
       "text": "When the harvest is in, a different character takes the stage. Known across Negros for his spot-on Captain Jack Sparrow, Solomon brings the costume, the swagger, and the comedy to fiestas, events, and appearances — proof that a farmer can command a crowd as easily as a field.",
@@ -163,32 +238,18 @@
         "Stage performances & meet-and-greets",
         "Public appearances & collaborations"
       ],
-      "image": "images/Solomon_1.jpg",
-      "ctaLabel": "Book an appearance"
-    }
-  },
-  "farmLearning": {
-    "studentVisits": {
-      "kicker": "Farm Learning",
-      "title": "A farm that became a classroom",
-      "intro": "Although Solomon Pagunsan did not attend college, his real-world farming experience has become a valuable learning resource for agriculture students. Many students visit his farm to observe practical farming techniques, gain field experience, and learn directly from his years of hands-on knowledge.",
-      "points": [
-        {
-          "heading": "Practical techniques",
-          "text": "Students watch real methods in action — land preparation, planting, crop care, and harvest — the way they actually happen on a working farm."
-        },
-        {
-          "heading": "Field experience",
-          "text": "Time on the land, not just in a lecture hall. Visitors see the full rhythm of the seasons and the day-to-day decisions a farmer makes."
-        },
-        {
-          "heading": "Learning from experience",
-          "text": "Decades of hands-on knowledge, shared directly. Solomon answers questions from the perspective of someone who built the operation himself."
-        }
-      ],
-      "image": "images/farm-03.jpg",
-      "ctaLabel": "Arrange a student visit"
+      "image": "images/Solomon_1.jpg"
     },
+    "quote": {
+      "text": "I returned home to grow something real — and to bring others up with me.",
+      "attribution": "— Solomon Pagunsan"
+    },
+    "ctaLabel": "Book an appearance"
+  },
+  "farm": {
+    "kicker": "The Farm",
+    "title": "A complete working farm",
+    "sub": "Twenty hectares run as one connected system — the cash crop that pays, the food crops that sustain, and the animals that carry the family through the long seasons between harvests.",
     "crops": {
       "kicker": "The Farm",
       "title": "What grows on the land",
@@ -226,43 +287,6 @@
         }
       ]
     },
-    "workshop": {
-      "kicker": "Solomon's Workshop",
-      "title": "Built by hand,<br/>for the field",
-      "sub": "When the right tool doesn't exist or doesn't fit the work, Solomon fabricates and modifies his own. The workshop is where farming meets engineering — practical inventions sharpened by real days in the soil.",
-      "items": [
-        {
-          "name": "Modified Spading Tools",
-          "note": "Field-tested ergonomics",
-          "img": "images/modified-spading.jpg",
-          "tall": true
-        },
-        {
-          "name": "Sugarcane Hand Tools",
-          "note": "Made for the cane rows",
-          "img": "images/workshop-01.jpg",
-          "tall": false
-        },
-        {
-          "name": "Equipment Modifications",
-          "note": "Repaired & re-engineered",
-          "img": "",
-          "tall": false
-        },
-        {
-          "name": "Fabrication Projects",
-          "note": "Welding & metalwork",
-          "img": "",
-          "tall": false
-        },
-        {
-          "name": "Agricultural Innovations",
-          "note": "Practical farm solutions",
-          "img": "",
-          "tall": true
-        }
-      ]
-    },
     "livestock": {
       "kicker": "The Animals",
       "title": "Livestock & the in-between",
@@ -291,68 +315,298 @@
       ]
     }
   },
+  "workshop": {
+    "kicker": "Solomon's Workshop",
+    "title": "Built by hand,<br/>for the field",
+    "sub": "When the right tool doesn't exist or doesn't fit the work, Solomon fabricates and modifies his own. The workshop is where farming meets engineering — practical inventions sharpened by real days in the soil.",
+    "items": [
+      {
+        "name": "Modified Spading Tools",
+        "note": "Field-tested ergonomics",
+        "img": "images/modified-spading.jpg",
+        "tall": true
+      },
+      {
+        "name": "Sugarcane Hand Tools",
+        "note": "Made for the cane rows",
+        "img": "images/workshop-01.jpg",
+        "tall": false
+      },
+      {
+        "name": "Equipment Modifications",
+        "note": "Repaired & re-engineered",
+        "img": "",
+        "tall": false
+      },
+      {
+        "name": "Fabrication Projects",
+        "note": "Welding & metalwork",
+        "img": "",
+        "tall": false
+      },
+      {
+        "name": "Agricultural Innovations",
+        "note": "Practical farm solutions",
+        "img": "",
+        "tall": true
+      }
+    ]
+  },
+  "farmLearning": {
+    "kicker": "Farm Learning",
+    "title": "A farm that became a classroom",
+    "intro": "Although Solomon Pagunsan did not attend college, his real-world farming experience has become a valuable learning resource for agriculture students. Many students visit his farm to observe practical farming techniques, gain field experience, and learn directly from his years of hands-on knowledge.",
+    "points": [
+      {
+        "heading": "Practical techniques",
+        "text": "Students watch real methods in action — land preparation, planting, crop care, and harvest — the way they actually happen on a working farm."
+      },
+      {
+        "heading": "Field experience",
+        "text": "Time on the land, not just in a lecture hall. Visitors see the full rhythm of the seasons and the day-to-day decisions a farmer makes."
+      },
+      {
+        "heading": "Learning from experience",
+        "text": "Decades of hands-on knowledge, shared directly. Solomon answers questions from the perspective of someone who built the operation himself."
+      }
+    ],
+    "image": "images/farm-03.jpg",
+    "modes": [
+      {
+        "title": "Educational tours",
+        "text": "Guided walks through a real, working farm — not a demonstration plot."
+      },
+      {
+        "title": "Practical demonstrations",
+        "text": "Planting, tool use, and crop care shown the way they're actually done."
+      },
+      {
+        "title": "Hands-on learning",
+        "text": "Students work the methods themselves, with Solomon correcting in real time."
+      },
+      {
+        "title": "Real-world experience",
+        "text": "Field knowledge that textbooks can describe but rarely teach."
+      }
+    ],
+    "gallery": [
+      "images/farm-03.jpg",
+      "images/farm-04.jpg",
+      "images/farm-01.jpg"
+    ],
+    "ctaLabel": "Arrange a student visit"
+  },
+  "products": {
+    "kicker": "Planting Materials & Tools",
+    "title": "Planting Materials & Tools",
+    "intro": "Solomon supplies selected planting materials and practical farming tools that are actively used in his own farm operations. Many farmers and customers have already purchased from him.",
+    "deliveryNote": "Nationwide delivery available. Ordering is inquiry-based — message to confirm current availability, quantities, and shipping.",
+    "items": [
+      {
+        "name": "Cassava Cuttings",
+        "desc": "Healthy, field-proven cassava stem cuttings selected from the farm's own stand — ready for replanting.",
+        "img": "images/Cassava.jpg",
+        "category": "Planting Material"
+      },
+      {
+        "name": "Napier Grass Cuttings",
+        "desc": "Fast-growing Napier (elephant) grass planting material — a reliable, high-yield forage for livestock feed.",
+        "img": "",
+        "category": "Planting Material"
+      },
+      {
+        "name": "Sugarcane Setts / Cuttings",
+        "desc": "Quality sugarcane setts cut from mature, productive cane for establishing a strong new stand.",
+        "img": "images/sugarcane-field.jpg",
+        "category": "Planting Material"
+      },
+      {
+        "name": "Modified Spading Tools",
+        "desc": "Solomon's hand-modified spading tools — built, tested, and used on his own farm to last and to fit the work.",
+        "img": "images/modified-spading.jpg",
+        "category": "Tool"
+      }
+    ],
+    "note": "Availability and pricing on request. This is an inquiry-based listing — there is no online checkout.",
+    "ctaLabel": "Inquire about availability"
+  },
   "vlogs": {
     "kicker": "Farmer Vlogger",
     "title": "Watch the farm work",
     "sub": "Honest documentation of life on a Negros farm — planting, harvesting, building, and raising animals. No filters, just the real work.",
+    "categories": [
+      "Featured",
+      "Educational",
+      "Farming Demonstrations",
+      "Community"
+    ],
     "items": [
       {
         "url": "https://www.youtube.com/watch?v=_8NPoL9fJNA",
         "title": "Sugarcane Harvest Season",
-        "desc": "From standing cane to the milling central."
+        "desc": "From standing cane to the milling central.",
+        "category": "Featured"
       },
       {
         "url": "https://www.youtube.com/watch?v=X3Bd-vqOao0",
         "title": "A Day on the Farm",
-        "desc": "Sunrise to sundown with the carabao."
+        "desc": "Sunrise to sundown with the carabao.",
+        "category": "Educational"
       },
       {
         "url": "https://www.youtube.com/watch?v=fU5zsyld4i8",
         "title": "Building Farm Tools",
-        "desc": "Inside Solomon's workshop."
+        "desc": "Inside Solomon's workshop.",
+        "category": "Educational"
       },
       {
         "url": "https://www.youtube.com/watch?v=RbGfI8n5xH8",
         "title": "Raising Pigs & Chickens",
-        "desc": "How the in-between seasons get funded."
+        "desc": "How the in-between seasons get funded.",
+        "category": "Farming Demonstrations"
       },
       {
         "url": "https://www.youtube.com/watch?v=PuO14QqvHOU",
         "title": "Planting Day",
-        "desc": "Preparing the field for the next crop."
+        "desc": "Preparing the field for the next crop.",
+        "category": "Farming Demonstrations"
       },
       {
         "url": "https://www.youtube.com/watch?v=Y5BuLfg6qJs",
         "title": "The Captain Appears",
-        "desc": "A little fun after the harvest."
+        "desc": "A little fun after the harvest.",
+        "category": "Community"
       }
     ]
   },
   "gallery": {
     "kicker": "Gallery",
     "title": "Life on the farm",
-    "images": [
-      "images/farm-01.jpg",
-      "images/hero-collage_5.jpg",
-      "images/farm-03.jpg",
-      "images/hero-collage_4.jpg",
-      "images/hero-collage_1.jpg",
-      "images/hero-collage_2.jpg",
-      "images/hero-collage_3.jpg",
-      "images/sugarcane-field.jpg",
-      "images/farm-05.jpg"
-      "images/Gallery_10.jpg"
-      "images/Gallery_11.jpg"
-      "images/Gallery_12.jpg"
-      "images/Gallery_13.jpg"
+    "categories": [
+      "Farm Life",
+      "Crops",
+      "Livestock",
+      "Workshop",
+      "Student Visits",
+      "Community Activities"
+    ],
+    "items": [
+      {
+        "src": "images/hero-collage_1.jpg",
+        "category": "Farm Life",
+        "caption": ""
+      },
+      {
+        "src": "images/hero-collage_2.jpg",
+        "category": "Farm Life",
+        "caption": ""
+      },
+      {
+        "src": "images/hero-collage_3.jpg",
+        "category": "Farm Life",
+        "caption": ""
+      },
+      {
+        "src": "images/hero-collage_4.jpg",
+        "category": "Farm Life",
+        "caption": ""
+      },
+      {
+        "src": "images/hero-collage_5.jpg",
+        "category": "Farm Life",
+        "caption": ""
+      },
+      {
+        "src": "images/Montage_1.jpg",
+        "category": "Farm Life",
+        "caption": ""
+      },
+      {
+        "src": "images/sugarcane-field.jpg",
+        "category": "Crops",
+        "caption": ""
+      },
+      {
+        "src": "images/Cassava.jpg",
+        "category": "Crops",
+        "caption": ""
+      },
+      {
+        "src": "images/corn-harvest.jpg",
+        "category": "Crops",
+        "caption": ""
+      },
+      {
+        "src": "images/farm-01.jpg",
+        "category": "Crops",
+        "caption": ""
+      },
+      {
+        "src": "images/farm-02.jpg",
+        "category": "Crops",
+        "caption": ""
+      },
+      {
+        "src": "images/livestock-01.jpg",
+        "category": "Livestock",
+        "caption": ""
+      },
+      {
+        "src": "images/livestock-02.jpg",
+        "category": "Livestock",
+        "caption": ""
+      },
+      {
+        "src": "images/livestock-03.jpg",
+        "category": "Livestock",
+        "caption": ""
+      },
+      {
+        "src": "images/livestock-04.jpg",
+        "category": "Livestock",
+        "caption": ""
+      },
+      {
+        "src": "images/carabao-team.jpg",
+        "category": "Livestock",
+        "caption": ""
+      },
+      {
+        "src": "images/Carabao_Montage_.jpg",
+        "category": "Livestock",
+        "caption": ""
+      },
+      {
+        "src": "images/workshop-01.jpg",
+        "category": "Workshop",
+        "caption": ""
+      },
+      {
+        "src": "images/modified-spading.jpg",
+        "category": "Workshop",
+        "caption": ""
+      },
+      {
+        "src": "images/farm-03.jpg",
+        "category": "Student Visits",
+        "caption": ""
+      },
+      {
+        "src": "images/farm-04.jpg",
+        "category": "Student Visits",
+        "caption": ""
+      },
+      {
+        "src": "images/farm-05.jpg",
+        "category": "Community Activities",
+        "caption": ""
+      }
     ]
   },
   "partners": {
-    "intro": {
-      "kicker": "Partnerships & Sponsors",
-      "title": "Partnerships & Sponsors",
-      "sub": "Brands, organizations and businesses that support, collaborate and work with Solomon Pagunsan."
-    },
+    "kicker": "Partnerships & Sponsors",
+    "title": "Partners & Sponsors",
+    "sub": "Brands, organizations, and businesses that support, supply, or collaborate with Solomon's farm and channel.",
     "sponsors": [
       {
         "name": "JI Telecom",
@@ -360,14 +614,14 @@
         "url": "https://www.jitelecom.ph/"
       },
       {
-        "name": "GoTraktora",
-        "logo": "images/sponsors/Icon-Horizontalx400.png",
+        "name": "Sponsor 2",
+        "logo": "",
         "url": ""
       },
       {
-        "name": "MMTT Laptop Services",
-        "logo": "images/sponsors/MMTT_Logo.jpg",
-        "url": "https://www.facebook.com/p/MMTT-Laptop-Service-Center-Bayawan-100063534807228/"
+        "name": "Sponsor 3",
+        "logo": "",
+        "url": ""
       },
       {
         "name": "Sponsor 4",
@@ -385,51 +639,17 @@
         "url": ""
       }
     ],
-    "services": {
-      "kicker": "Work With Solomon",
-      "title": "More than a farmer.<br/>A partner brands can grow with.",
-      "sub": "Farmer, inventor, entrepreneur, content creator, community personality, and brand partner — Solomon connects companies with the real audience of Philippine agriculture. Here's how to work together.",
-      "items": [
-        {
-          "name": "Product Endorsements",
-          "text": "Authentic, field-tested endorsements of agricultural products, tools, and equipment — shown working on a real Negros farm."
-        },
-        {
-          "name": "Sponsored Videos",
-          "text": "Dedicated or integrated brand features across YouTube, Facebook, and TikTok, produced in Solomon's honest documentary style."
-        },
-        {
-          "name": "Farm Visits",
-          "text": "Hosted visits to the farm for brands, media, schools, and organizations — see the operation and the story up close."
-        },
-        {
-          "name": "Event Guesting",
-          "text": "Speaking engagements, guest appearances, and 'The Captain' performances for fiestas, expos, and corporate events."
-        },
-        {
-          "name": "Brand Collaborations",
-          "text": "Long-term ambassadorships and campaigns with brands that share a genuine commitment to Filipino farmers."
-        },
-        {
-          "name": "Community Events",
-          "text": "Partnerships on community programs, farmer meet-ups, and outreach activities across Negros and beyond."
-        },
-        {
-          "name": "Agricultural Promotions",
-          "text": "Campaigns that promote crops, livestock, farm technology, and agri-services to an engaged farming audience."
-        }
-      ]
-    },
-    "mediaKit": {
-      "kicker": "Media Kit",
-      "title": "The audience at a glance",
-      "sub": "A quick snapshot for brands, agencies, and organizations evaluating a collaboration. Full media kit and rate card available on request.",
-      "facebookFollowers": "",
-      "youtubeSubscribers": "",
-      "tiktokFollowers": "",
-      "monthlyReach": "",
-      "location": "Philippines"
-    }
+    "supporters": [
+      {
+        "name": "Local agricultural suppliers",
+        "text": "Seed stock, feed, and inputs that keep the farm running."
+      },
+      {
+        "name": "Community & cooperative partners",
+        "text": "Local groups Solomon works with and supports."
+      }
+    ],
+    "ctaLabel": "Become a Partner"
   },
   "press": {
     "kicker": "Press & Recognition",
@@ -502,11 +722,16 @@
         "label": "Email",
         "blurb": "For media & partnerships"
       }
-    ]
+    ],
+    "location": {
+      "label": "Location",
+      "text": "Bayawan City, Negros Oriental, Philippines"
+    },
+    "formNote": "Send an inquiry and Solomon will get back to you. Fields marked are required."
   }
 };
 
-  function dataPath() {
+    function dataPath() {
     return location.pathname.includes("/admin/")
       ? "../data/content.json"
       : "data/content.json";

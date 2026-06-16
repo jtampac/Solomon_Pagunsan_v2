@@ -46,26 +46,74 @@
   function initNav() {
     const nav = $("#nav");
     if (!nav) return;
-    const onScroll = function () { nav.classList.toggle("is-solid", window.scrollY > 80); };
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
+    const page = (document.body && document.body.dataset.page) || "home";
+    const isHome = page === "home";
+
+    /* Home: transparent over the hero, solid after scrolling.
+       Inner pages: always solid (cream) — readable, never overlaps. */
+    const setSolid = function () {
+      if (isHome) nav.classList.toggle("is-solid", window.scrollY > 80);
+      else nav.classList.add("is-solid");
+    };
+    setSolid();
+    if (isHome) window.addEventListener("scroll", setSolid, { passive: true });
 
     const toggle = $("#navToggle");
     const links = $("#navLinks");
+    const closeMenu = function () {
+      if (!links) return;
+      links.classList.remove("is-open");
+      if (toggle) toggle.setAttribute("aria-expanded", "false");
+      document.body.classList.remove("nav-open");
+    };
     if (toggle && links) {
       toggle.addEventListener("click", function () {
         const open = links.classList.toggle("is-open");
         toggle.setAttribute("aria-expanded", open ? "true" : "false");
         document.body.classList.toggle("nav-open", open);
       });
-      $$("#navLinks a").forEach(function (a) {
-        a.addEventListener("click", function () {
-          links.classList.remove("is-open");
-          toggle.setAttribute("aria-expanded", "false");
-          document.body.classList.remove("nav-open");
+      $$("#navLinks a").forEach(function (a) { a.addEventListener("click", closeMenu); });
+      document.addEventListener("keydown", function (e) { if (e.key === "Escape") closeMenu(); });
+    }
+  }
+
+  /* Inquiry form (Contact page) — builds a mailto message; no backend. */
+  function initContactForm(content) {
+    const form = $("#inquiryForm");
+    if (!form) return;
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const get = function (n) { const f = form.querySelector('[name="' + n + '"]'); return f ? f.value.trim() : ""; };
+      const name = get("name"), email = get("email"), subject = get("subject"), message = get("message");
+      if (!name || !email || !message) { alert("Please fill in your name, email, and message."); return; }
+      const to = (content.social && content.social.email) || "";
+      const subj = encodeURIComponent(subject || ("Inquiry from " + name));
+      const body = encodeURIComponent(message + "\n\n— " + name + " (" + email + ")");
+      if (to) {
+        window.location.href = "mailto:" + to + "?subject=" + subj + "&body=" + body;
+      } else {
+        const msgr = (content.social && content.social.messenger) || "";
+        if (msgr) window.open(msgr, "_blank", "noopener");
+      }
+    });
+  }
+
+  /* Gallery category filters */
+  function initGalleryFilters() {
+    const bar = $("#galleryFilters");
+    if (!bar) return;
+    const cells = $$("#galleryMasonry .gallery__cell");
+    $$(".gallery__filter", bar).forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        $$(".gallery__filter", bar).forEach(function (b) { b.classList.remove("is-active"); });
+        btn.classList.add("is-active");
+        const f = btn.getAttribute("data-filter");
+        cells.forEach(function (cell) {
+          const show = f === "all" || cell.getAttribute("data-cat") === f;
+          cell.classList.toggle("is-hidden", !show);
         });
       });
-    }
+    });
   }
 
   /* ----------------------- SCROLL REVEAL ------------------------- */
@@ -117,6 +165,8 @@
       initNav();
       initLightbox();
       initMediaClicks(content);
+      initContactForm(content);
+      initGalleryFilters();
       initReveal();
       initCounters();
     }).catch(function (err) {
