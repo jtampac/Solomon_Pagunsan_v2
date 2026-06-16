@@ -356,8 +356,8 @@
         "url": "https://www.jitelecom.ph/"
       },
       {
-        "name": "Sponsor 2",
-        "logo": "",
+        "name": "GoTraktora",
+        "logo": "images/sponsors/Icon-Horizontalx400.png",
         "url": ""
       },
       {
