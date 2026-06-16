@@ -623,11 +623,11 @@
         "logo": "images/sponsors/MMTT_Logo.jpg",
         "url": "https://www.facebook.com/p/MMTT-Laptop-Service-Center-Bayawan-100063534807228/"
       },
-      {
-        "name": "Sponsor 4",
-        "logo": "",
-        "url": ""
-      },
+     {
+        "name": "Skygo Philippines",
+        "logo": "images/sponsors/Skygo.png",
+        "url": "https://www.facebook.com/skygoph"
+      }
       {
         "name": "Sponsor 5",
         "logo": "",
