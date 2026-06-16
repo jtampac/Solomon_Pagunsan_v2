@@ -76,7 +76,7 @@
     {
       "num": 10,
       "unit": "years",
-      "label": "Working abroad before the farm"
+      "label": "Working away from Home before the farm"
     }
   ],
   "announcements": [
