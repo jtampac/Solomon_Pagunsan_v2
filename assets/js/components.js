@@ -11,7 +11,7 @@
     { label: "Home",                 href: "index.html",         key: "home" },
     { label: "About",                href: "about.html",         key: "about" },
     { label: "The Farm",             href: "farm.html",          key: "farm" },
-    { label: "The Captain of Negros",href: "captain.html",       key: "captain" },
+    { label: "The Captain",          href: "captain.html",       key: "captain" },
     { label: "Workshop",             href: "workshop.html",      key: "workshop" },
     { label: "Farm Learning",        href: "farm-learning.html", key: "farm-learning" },
     { label: "Products",             href: "products.html",      key: "products" },
