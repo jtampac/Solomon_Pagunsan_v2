@@ -308,13 +308,13 @@
       {
         "name": "Equipment Modifications",
         "note": "Repaired & re-engineered",
-        "img": "",
+        "img": "images/Tool_1.jpg",
         "tall": false
       },
       {
         "name": "Fabrication Projects",
         "note": "Welding & metalwork",
-        "img": "",
+        "img": "images/Tool_2.jpg",
         "tall": false
       },
       {
