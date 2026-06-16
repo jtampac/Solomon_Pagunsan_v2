@@ -627,7 +627,7 @@
         "name": "Skygo Philippines",
         "logo": "images/sponsors/Skygo.png",
         "url": "https://www.facebook.com/skygoph"
-      }
+      },
       {
         "name": "Sponsor 5",
         "logo": "",
