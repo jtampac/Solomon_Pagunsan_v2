@@ -45,215 +45,233 @@
   var SCHEMA = [
     { id: "dashboard", group: "Overview", label: "Dashboard", type: "dashboard" },
 
-    /* ----- HERO ----- */
+    /* ---------- HOME ---------- */
     {
       id: "hero", group: "Home", label: "Hero", type: "object", path: "hero",
-      intro: "The first thing visitors see on the home page.",
+      intro: "The home-page hero (the only page with a transparent-over-image header).",
       fields: [
-        { key: "eyebrow", label: "Eyebrow (small line above name)", type: "text" },
+        { key: "eyebrow", label: "Eyebrow", type: "text" },
         { key: "titleLine1", label: "Title — line 1", type: "text" },
         { key: "titleLine2", label: "Title — line 2", type: "text" },
         { key: "tagline", label: "Tagline", type: "text" },
         { key: "lede", label: "Intro paragraph", type: "textarea" },
         { key: "image", label: "Background image", type: "image" },
         { key: "primaryCta", label: "Primary button", type: "object", fields: [
-          { key: "label", label: "Button label", type: "text" },
-          { key: "href", label: "Link (page or URL)", type: "text" }
-        ]},
+          { key: "label", label: "Label", type: "text" }, { key: "href", label: "Link", type: "text" } ] },
         { key: "secondaryCta", label: "Secondary button", type: "object", fields: [
-          { key: "label", label: "Button label", type: "text" },
-          { key: "href", label: "Link (page or URL)", type: "text" }
-        ]}
+          { key: "label", label: "Label", type: "text" }, { key: "href", label: "Link", type: "text" } ] }
       ]
     },
-
-    /* ----- ANNOUNCEMENTS ----- */
     {
       id: "announcements", group: "Home", label: "Announcements", type: "list", path: "announcements",
-      intro: "Short notices shown on the home page. Untick “Active” to hide one without deleting it.",
-      itemLabel: "title",
+      intro: "Notices on the home page. Untick Active to hide without deleting.", itemLabel: "title",
       itemFields: [
         { key: "title", label: "Title", type: "text" },
         { key: "body", label: "Message", type: "textarea" },
-        { key: "date", label: "Date label (e.g. June 2026)", type: "text" },
+        { key: "date", label: "Date label", type: "text" },
         { key: "active", label: "Active (show on site)", type: "checkbox" }
       ]
     },
+    {
+      id: "homeTeasers", group: "Home", label: "Home Teasers", type: "list", path: "homeTeasers",
+      intro: "The “Inside the farm” cards linking to key pages.", itemLabel: "title",
+      itemFields: [
+        { key: "title", label: "Title", type: "text" },
+        { key: "text", label: "Text", type: "textarea" },
+        { key: "href", label: "Links to (page)", type: "text" },
+        { key: "linkLabel", label: "Link label", type: "text" }
+      ]
+    },
 
-    /* ----- ABOUT ----- */
+    /* ---------- ABOUT ---------- */
     {
       id: "about", group: "About", label: "About Solomon", type: "object", path: "about",
-      intro: "The story section. The title may contain a line break written as &lt;br/&gt;.",
+      intro: "Personal story, journey, values, and philosophy.",
       fields: [
         { key: "kicker", label: "Kicker", type: "text" },
-        { key: "title", label: "Title (HTML allowed)", type: "text" },
-        { key: "paragraphs", label: "Paragraphs", type: "stringlist", multiline: true },
-        { key: "timeline", label: "Timeline", type: "list", itemLabel: "year", itemFields: [
+        { key: "title", label: "Title", type: "text" },
+        { key: "paragraphs", label: "Story paragraphs", type: "stringlist", multiline: true },
+        { key: "timeline", label: "Journey timeline", type: "list", itemLabel: "year", itemFields: [
           { key: "year", label: "Year", type: "text" },
           { key: "heading", label: "Heading", type: "text" },
-          { key: "text", label: "Text", type: "textarea" }
-        ]},
+          { key: "text", label: "Text", type: "textarea" } ] },
+        { key: "values", label: "Values", type: "list", itemLabel: "title", itemFields: [
+          { key: "title", label: "Title", type: "text" },
+          { key: "text", label: "Text", type: "textarea" } ] },
+        { key: "philosophyTitle", label: "Philosophy heading", type: "text" },
+        { key: "philosophy", label: "Philosophy paragraphs", type: "stringlist", multiline: true },
+        { key: "familyNote", label: "Family background note", type: "textarea", hint: "Placeholder — replace with verified family details." },
         { key: "quote", label: "Pull quote", type: "object", fields: [
           { key: "text", label: "Quote", type: "textarea" },
-          { key: "attribution", label: "Attribution", type: "text" }
-        ]},
-        { key: "captain", label: "“Captain” section", type: "object", fields: [
+          { key: "attribution", label: "Attribution", type: "text" } ] }
+      ]
+    },
+
+    /* ---------- THE CAPTAIN OF NEGROS ---------- */
+    {
+      id: "captain", group: "The Captain", label: "The Captain of Negros", type: "object", path: "captain",
+      intro: "Dedicated page: journey, influence, community, reach, recognition, leadership.",
+      fields: [
+        { key: "kicker", label: "Kicker", type: "text" },
+        { key: "title", label: "Title", type: "text" },
+        { key: "lead", label: "Lead paragraph", type: "textarea" },
+        { key: "image", label: "Banner image", type: "image" },
+        { key: "pillars", label: "Pillars", type: "list", itemLabel: "title", itemFields: [
+          { key: "title", label: "Title", type: "text" },
+          { key: "text", label: "Text", type: "textarea" } ] },
+        { key: "reach", label: "Social reach", type: "object", fields: [
+          { key: "facebookFollowers", label: "Facebook followers", type: "text" },
+          { key: "youtubeSubscribers", label: "YouTube subscribers", type: "text" },
+          { key: "tiktokFollowers", label: "TikTok followers", type: "text" },
+          { key: "monthlyReach", label: "Monthly reach", type: "text" },
+          { key: "note", label: "Note", type: "text" } ] },
+        { key: "persona", label: "“Captain Jack Sparrow” block", type: "object", fields: [
           { key: "kicker", label: "Kicker", type: "text" },
           { key: "title", label: "Title", type: "text" },
           { key: "text", label: "Text", type: "textarea" },
           { key: "tags", label: "Tags", type: "stringlist" },
-          { key: "image", label: "Image", type: "image" },
-          { key: "ctaLabel", label: "Button label", type: "text" }
-        ]}
+          { key: "image", label: "Image", type: "image" } ] },
+        { key: "quote", label: "Pull quote", type: "object", fields: [
+          { key: "text", label: "Quote", type: "textarea" },
+          { key: "attribution", label: "Attribution", type: "text" } ] },
+        { key: "ctaLabel", label: "Button label", type: "text" }
       ]
     },
 
-    /* ----- STUDENT VISITS ----- */
+    /* ---------- THE FARM ---------- */
     {
-      id: "studentVisits", group: "Farm Learning", label: "Student Visits", type: "object",
-      path: "farmLearning.studentVisits",
-      intro: "The Farm Learning / Student Visits section.",
+      id: "farm", group: "The Farm", label: "The Farm", type: "object", path: "farm",
+      intro: "Crops + livestock as one working ecosystem.",
+      fields: [
+        { key: "kicker", label: "Kicker", type: "text" },
+        { key: "title", label: "Title", type: "text" },
+        { key: "sub", label: "Intro", type: "textarea" },
+        { key: "crops", label: "Crops", type: "object", fields: [
+          { key: "kicker", label: "Kicker", type: "text" },
+          { key: "title", label: "Title (HTML ok)", type: "text" },
+          { key: "sub", label: "Subtitle", type: "textarea" },
+          { key: "items", label: "Crops", type: "list", itemLabel: "name", itemFields: [
+            { key: "name", label: "Name", type: "text" },
+            { key: "text", label: "Description", type: "textarea" },
+            { key: "img", label: "Image", type: "image" },
+            { key: "wide", label: "Wide tile", type: "checkbox" } ] } ] },
+        { key: "livestock", label: "Livestock", type: "object", fields: [
+          { key: "kicker", label: "Kicker", type: "text" },
+          { key: "title", label: "Title", type: "text" },
+          { key: "sub", label: "Subtitle", type: "textarea" },
+          { key: "items", label: "Animals", type: "list", itemLabel: "name", itemFields: [
+            { key: "name", label: "Name", type: "text" },
+            { key: "text", label: "Description", type: "textarea" },
+            { key: "img", label: "Image", type: "image" } ] } ] }
+      ]
+    },
+
+    /* ---------- WORKSHOP ---------- */
+    {
+      id: "workshop", group: "Workshop", label: "Workshop", type: "object", path: "workshop",
+      fields: [
+        { key: "kicker", label: "Kicker", type: "text" },
+        { key: "title", label: "Title (HTML ok)", type: "text" },
+        { key: "sub", label: "Subtitle", type: "textarea" },
+        { key: "items", label: "Tools / innovations", type: "list", itemLabel: "name", itemFields: [
+          { key: "name", label: "Name", type: "text" },
+          { key: "note", label: "Note", type: "textarea" },
+          { key: "img", label: "Image", type: "image" },
+          { key: "tall", label: "Tall tile", type: "checkbox" } ] }
+      ]
+    },
+
+    /* ---------- FARM LEARNING ---------- */
+    {
+      id: "farmLearning", group: "Farm Learning", label: "Farm Learning", type: "object", path: "farmLearning",
+      intro: "Student visits and hands-on learning (kept separate from The Farm).",
       fields: [
         { key: "kicker", label: "Kicker", type: "text" },
         { key: "title", label: "Title", type: "text" },
         { key: "intro", label: "Intro paragraph", type: "textarea" },
         { key: "points", label: "Highlights", type: "list", itemLabel: "heading", itemFields: [
           { key: "heading", label: "Heading", type: "text" },
-          { key: "text", label: "Text", type: "textarea" }
-        ]},
-        { key: "image", label: "Image", type: "image" },
+          { key: "text", label: "Text", type: "textarea" } ] },
+        { key: "image", label: "Feature image", type: "image" },
+        { key: "modes", label: "Ways students learn", type: "list", itemLabel: "title", itemFields: [
+          { key: "title", label: "Title", type: "text" },
+          { key: "text", label: "Text", type: "textarea" } ] },
+        { key: "gallery", label: "Visit photos", type: "imagelist" },
         { key: "ctaLabel", label: "Button label", type: "text" }
       ]
     },
 
-    /* ----- CROPS ----- */
+    /* ---------- PRODUCTS ---------- */
     {
-      id: "crops", group: "Farm Learning", label: "Farm Crops", type: "object",
-      path: "farmLearning.crops",
-      fields: [
-        { key: "kicker", label: "Kicker", type: "text" },
-        { key: "title", label: "Title (HTML allowed)", type: "text" },
-        { key: "sub", label: "Subtitle", type: "textarea" },
-        { key: "items", label: "Crops", type: "list", itemLabel: "name", itemFields: [
-          { key: "name", label: "Name", type: "text" },
-          { key: "text", label: "Description", type: "textarea" },
-          { key: "img", label: "Image", type: "image" },
-          { key: "wide", label: "Wide tile (spans 2 columns)", type: "checkbox" }
-        ]}
-      ]
-    },
-
-    /* ----- WORKSHOP ----- */
-    {
-      id: "workshop", group: "Farm Learning", label: "Workshop / Inventions", type: "object",
-      path: "farmLearning.workshop",
-      fields: [
-        { key: "kicker", label: "Kicker", type: "text" },
-        { key: "title", label: "Title (HTML allowed)", type: "text" },
-        { key: "sub", label: "Subtitle", type: "textarea" },
-        { key: "items", label: "Inventions / tools", type: "list", itemLabel: "name", itemFields: [
-          { key: "name", label: "Name", type: "text" },
-          { key: "note", label: "Note", type: "textarea" },
-          { key: "img", label: "Image", type: "image" },
-          { key: "tall", label: "Tall tile", type: "checkbox" }
-        ]}
-      ]
-    },
-
-    /* ----- LIVESTOCK ----- */
-    {
-      id: "livestock", group: "Farm Learning", label: "Livestock", type: "object",
-      path: "farmLearning.livestock",
+      id: "products", group: "Products", label: "Planting Materials & Tools", type: "object", path: "products",
+      intro: "Inquiry-based listing — no shopping cart. Cassava cuttings, Napier grass, sugarcane setts, modified tools.",
       fields: [
         { key: "kicker", label: "Kicker", type: "text" },
         { key: "title", label: "Title", type: "text" },
-        { key: "sub", label: "Subtitle", type: "textarea" },
-        { key: "items", label: "Animals", type: "list", itemLabel: "name", itemFields: [
+        { key: "intro", label: "Intro", type: "textarea" },
+        { key: "deliveryNote", label: "Delivery note", type: "textarea" },
+        { key: "items", label: "Items", type: "list", itemLabel: "name", itemFields: [
           { key: "name", label: "Name", type: "text" },
-          { key: "text", label: "Description", type: "textarea" },
-          { key: "img", label: "Image", type: "image" }
-        ]}
+          { key: "desc", label: "Description", type: "textarea" },
+          { key: "img", label: "Image", type: "image" },
+          { key: "category", label: "Tag (e.g. Planting Material / Tool)", type: "text" } ] },
+        { key: "note", label: "Disclaimer", type: "textarea" },
+        { key: "ctaLabel", label: "Inquiry button label", type: "text" }
       ]
     },
 
-    /* ----- VLOGS ----- */
+    /* ---------- VLOGS ---------- */
     {
       id: "vlogs", group: "Content", label: "Vlogs", type: "object", path: "vlogs",
-      intro: "YouTube links shown on the Vlogs page. Paste the full watch URL.",
+      intro: "Videos grouped by category. Paste the full YouTube watch URL.",
       fields: [
         { key: "kicker", label: "Kicker", type: "text" },
         { key: "title", label: "Title", type: "text" },
         { key: "sub", label: "Subtitle", type: "textarea" },
+        { key: "categories", label: "Categories (order shown)", type: "stringlist" },
         { key: "items", label: "Videos", type: "list", itemLabel: "title", itemFields: [
           { key: "url", label: "YouTube URL", type: "url" },
           { key: "title", label: "Title", type: "text" },
-          { key: "desc", label: "Description", type: "textarea" }
-        ]}
+          { key: "desc", label: "Description", type: "textarea" },
+          { key: "category", label: "Category", type: "text" } ] }
       ]
     },
 
-    /* ----- GALLERY ----- */
+    /* ---------- GALLERY ---------- */
     {
       id: "gallery", group: "Content", label: "Gallery", type: "object", path: "gallery",
-      intro: "Photos shown in the gallery grid.",
+      intro: "Photos with a category each (used by the filter tabs).",
       fields: [
         { key: "kicker", label: "Kicker", type: "text" },
         { key: "title", label: "Title", type: "text" },
-        { key: "images", label: "Images", type: "imagelist" }
+        { key: "categories", label: "Categories (filter order)", type: "stringlist" },
+        { key: "items", label: "Photos", type: "list", itemLabel: "category", itemFields: [
+          { key: "src", label: "Image", type: "image" },
+          { key: "category", label: "Category", type: "text" },
+          { key: "caption", label: "Caption (optional)", type: "text" } ] }
       ]
     },
 
-    /* ----- PARTNERS / SPONSORS ----- */
+    /* ---------- PARTNERS ---------- */
     {
-      id: "partnersIntro", group: "Partners", label: "Partners — Intro", type: "object",
-      path: "partners.intro",
-      fields: [
-        { key: "kicker", label: "Kicker", type: "text" },
-        { key: "title", label: "Title", type: "text" },
-        { key: "sub", label: "Subtitle", type: "textarea" }
-      ]
-    },
-    {
-      id: "sponsors", group: "Partners", label: "Sponsors / Logos", type: "list",
-      path: "partners.sponsors",
-      intro: "Logos in the auto-scrolling strip. Use clean, transparent PNGs of similar height for the best look.",
-      itemLabel: "name",
-      itemFields: [
-        { key: "name", label: "Sponsor name", type: "text" },
-        { key: "logo", label: "Logo", type: "image" },
-        { key: "url", label: "Website", type: "url" }
-      ]
-    },
-    {
-      id: "services", group: "Partners", label: "Work With Solomon", type: "object",
-      path: "partners.services",
-      fields: [
-        { key: "kicker", label: "Kicker", type: "text" },
-        { key: "title", label: "Title (HTML allowed)", type: "text" },
-        { key: "sub", label: "Subtitle", type: "textarea" },
-        { key: "items", label: "Services", type: "list", itemLabel: "name", itemFields: [
-          { key: "name", label: "Service", type: "text" },
-          { key: "text", label: "Description", type: "textarea" }
-        ]}
-      ]
-    },
-    {
-      id: "mediaKit", group: "Partners", label: "Media Kit", type: "object",
-      path: "partners.mediaKit",
-      intro: "Audience snapshot for brands. Leave a field blank to hide it.",
+      id: "partners", group: "Partners", label: "Partners & Sponsors", type: "object", path: "partners",
+      intro: "Logo slider + supporters. Use clean, similar-height logos.",
       fields: [
         { key: "kicker", label: "Kicker", type: "text" },
         { key: "title", label: "Title", type: "text" },
         { key: "sub", label: "Subtitle", type: "textarea" },
-        { key: "facebookFollowers", label: "Facebook followers", type: "text" },
-        { key: "youtubeSubscribers", label: "YouTube subscribers", type: "text" },
-        { key: "tiktokFollowers", label: "TikTok followers", type: "text" },
-        { key: "monthlyReach", label: "Monthly reach", type: "text" },
-        { key: "location", label: "Location", type: "text" }
+        { key: "sponsors", label: "Sponsors / logos", type: "list", itemLabel: "name", itemFields: [
+          { key: "name", label: "Name", type: "text" },
+          { key: "logo", label: "Logo", type: "image" },
+          { key: "url", label: "Website", type: "url" } ] },
+        { key: "supporters", label: "Supporters / organizations", type: "list", itemLabel: "name", itemFields: [
+          { key: "name", label: "Name", type: "text" },
+          { key: "text", label: "Text", type: "textarea" } ] },
+        { key: "ctaLabel", label: "Button label", type: "text" }
       ]
     },
 
-    /* ----- PRESS ----- */
+    /* ---------- PRESS ---------- */
     {
       id: "press", group: "Press", label: "Press & Recognition", type: "object", path: "press",
       fields: [
@@ -262,37 +280,38 @@
         { key: "items", label: "Articles", type: "list", itemLabel: "outlet", itemFields: [
           { key: "outlet", label: "Outlet", type: "text" },
           { key: "title", label: "Headline", type: "text" },
-          { key: "meta", label: "Meta (date / section)", type: "text" },
-          { key: "url", label: "Article URL", type: "url" }
-        ]},
+          { key: "meta", label: "Meta", type: "text" },
+          { key: "url", label: "URL", type: "url" } ] },
         { key: "achievements", label: "Achievements", type: "list", itemLabel: "title", itemFields: [
           { key: "title", label: "Title", type: "text" },
-          { key: "text", label: "Text", type: "textarea" }
-        ]}
+          { key: "text", label: "Text", type: "textarea" } ] }
       ]
     },
 
-    /* ----- CONTACT ----- */
+    /* ---------- CONTACT ---------- */
     {
       id: "contact", group: "Contact", label: "Contact", type: "object", path: "contact",
-      intro: "Contact page copy. The actual links (email, WhatsApp, socials) live under “Social & Links”.",
+      intro: "Contact copy, channels, location. Links live under Social & Links.",
       fields: [
         { key: "kicker", label: "Kicker", type: "text" },
-        { key: "title", label: "Title (HTML allowed)", type: "text" },
+        { key: "title", label: "Title (HTML ok)", type: "text" },
         { key: "text", label: "Intro text", type: "textarea" },
         { key: "channels", label: "Channels", type: "list", itemLabel: "label", itemFields: [
-          { key: "key", label: "Type (email / whatsapp / facebook / messenger / youtube / tiktok / instagram)", type: "text" },
+          { key: "key", label: "Type (email/whatsapp/facebook/messenger/youtube/tiktok/instagram)", type: "text" },
           { key: "label", label: "Label", type: "text" },
-          { key: "blurb", label: "Blurb", type: "text" }
-        ]}
+          { key: "blurb", label: "Blurb", type: "text" } ] },
+        { key: "location", label: "Location", type: "object", fields: [
+          { key: "label", label: "Label", type: "text" },
+          { key: "text", label: "Address text", type: "text" } ] },
+        { key: "formNote", label: "Form note", type: "text" }
       ]
     },
     {
       id: "social", group: "Contact", label: "Social & Links", type: "object", path: "social",
-      intro: "These power every social icon, the contact channels, and the footer. Fill the WhatsApp and email placeholders before publishing.",
+      intro: "Powers every social icon, contact channels, and footer. Fill the WhatsApp and email placeholders before launch.",
       fields: [
         { key: "email", label: "Email", type: "email" },
-        { key: "whatsapp", label: "WhatsApp link (https://wa.me/63…)", type: "url" },
+        { key: "whatsapp", label: "WhatsApp link", type: "url" },
         { key: "facebook", label: "Facebook", type: "url" },
         { key: "messenger", label: "Messenger", type: "url" },
         { key: "youtube", label: "YouTube", type: "url" },
@@ -301,7 +320,7 @@
       ]
     },
 
-    /* ----- SITE / FOOTER ----- */
+    /* ---------- SETTINGS ---------- */
     {
       id: "site", group: "Settings", label: "Site & Footer", type: "object", path: "site",
       fields: [
@@ -649,11 +668,12 @@
     var stats = [
       ["Announcements", count("announcements")],
       ["Timeline entries", count("about.timeline")],
-      ["Crops", count("farmLearning.crops.items")],
-      ["Inventions", count("farmLearning.workshop.items")],
-      ["Livestock", count("farmLearning.livestock.items")],
+      ["Crops", count("farm.crops.items")],
+      ["Livestock", count("farm.livestock.items")],
+      ["Workshop tools", count("workshop.items")],
+      ["Products", count("products.items")],
       ["Vlogs", count("vlogs.items")],
-      ["Gallery photos", count("gallery.images")],
+      ["Gallery photos", count("gallery.items")],
       ["Sponsors", count("partners.sponsors")],
       ["Press articles", count("press.items")]
     ];
@@ -667,7 +687,7 @@
     mount.appendChild(grid);
 
     // quick links
-    var quick = ["hero", "studentVisits", "vlogs", "gallery", "sponsors", "press", "social"];
+    var quick = ["hero", "about", "captain", "farm", "farmLearning", "products", "gallery", "social"];
     var links = el("div", { class: "dash__links" });
     quick.forEach(function (id) {
       var sec = SCHEMA.filter(function (s) { return s.id === id; })[0];
