@@ -614,14 +614,14 @@
         "url": "https://www.jitelecom.ph/"
       },
       {
-        "name": "Sponsor 2",
-        "logo": "",
+        "name": "GoTraktora",
+        "logo": "images/sponsors/Icon-Horizontalx400.png",
         "url": ""
       },
       {
-        "name": "Sponsor 3",
-        "logo": "",
-        "url": ""
+        "name": "MMTT Laptop Services",
+        "logo": "images/sponsors/MMTT_Logo.jpg",
+        "url": "https://www.facebook.com/p/MMTT-Laptop-Service-Center-Bayawan-100063534807228/"
       },
       {
         "name": "Sponsor 4",
