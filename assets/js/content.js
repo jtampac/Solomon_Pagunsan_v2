@@ -347,7 +347,7 @@
       {
         "name": "Agricultural Innovations",
         "note": "Practical farm solutions",
-        "img": "images/Tools_1.jpg",
+        "img": "images/Tools_3.jpg",
         "tall": true
       }
     ]
