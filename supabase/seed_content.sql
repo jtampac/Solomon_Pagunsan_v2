@@ -323,6 +323,10 @@ values (1, $content${
       "images/hero-collage_3.jpg",
       "images/sugarcane-field.jpg",
       "images/farm-05.jpg"
+       "images/Gallery_10.jpg"
+      "images/Gallery_11.jpg"
+      "images/Gallery_12.jpg"
+      "images/Gallery_13.jpg"
     ]
   },
   "partners": {
